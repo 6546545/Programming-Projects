@@ -1,3 +1,7 @@
+# This was the webscraper tutorial provided by www.realpython.com
+#
+#
+
 #Import "urlopen" from urllib package
 from urllib.request import urlopen
 
