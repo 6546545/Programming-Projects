@@ -19,10 +19,31 @@ def main():
         print('\Ethernet Frame:')
         print('Destination: {}, Source: {}, Protocol: {}'.format(eth[0], eth[1], eth[2]))
 
-main()
 
 def ipv4_head(raw_data):
     vers_head_len = raw_data[0]
     version = vers_head_len >> 4
     head_len = (vers_head_len & 15) * 4
     ttl, proto, src, target =  Struct.unpack('! 8x B B 2x 4s 4s', raw_data[:20])
+    data =  raw_data[head_len:]
+    return version, head_len, ttl, proto, src, target, data
+
+def main():
+    s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
+    while True:
+        raw_data, adr = s.recvfrom(65535)
+        eth = ethernet_head(raw_data)
+        print('\n Ethernet Frame:')
+        print('Destination: {}, Source: {}, Protocol {}'.format(eth[0], eth[1], eth[2]))
+
+        if eth[2] == 8:
+            ipv4 = ipv4(eth[4])
+            print('\t - ' + 'IPV4 Packet:')
+            print('\t\t - ' + 'Version: {}, Header Length: {}, Source: {}, TTL: {}'.format(ipv4[1], ipv4[2], ipv4[3]))
+            print('\t\t - ' + 'Protocol: {}, Source: {}, Target: {}'.format(ipv4[4], ipv4[5], ipv4[6]))
+
+def get_ip(addr):
+    return '.'.join(map(str, addr))
+
+def get_mac_addr(dest):
+    return
