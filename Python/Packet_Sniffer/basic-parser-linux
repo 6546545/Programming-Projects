@@ -1,0 +1,10 @@
+from struct import *
+import sys
+
+def ethernet_head(raw_data):
+    dest, src, prototype = Struct.unpack('! 6s 6s H', raw_data[:14])
+    dest_mac = get_mac_addr(dest)
+    dest_src = get_mac_addr(src)
+    proto = socket.htons(prototype)
+    data = raw_data[14:]
+    return dest_mac, dest_src, proto, data
