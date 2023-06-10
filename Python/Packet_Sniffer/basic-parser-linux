@@ -1,3 +1,4 @@
+import socket
 from struct import *
 import sys
 
@@ -8,3 +9,20 @@ def ethernet_head(raw_data):
     proto = socket.htons(prototype)
     data = raw_data[14:]
     return dest_mac, dest_src, proto, data
+
+def main():
+    #May need to change the AF_INET6 to AF_PACKET
+    s = socket.socket(socket.AF_INET6, socket.SOCK_RAW, socket.ntohs(3))
+    while True:
+        raw_data, addr = s.recvfrom(65535)
+        eth = ethernet_head(raw_data)
+        print('\Ethernet Frame:')
+        print('Destination: {}, Source: {}, Protocol: {}'.format(eth[0], eth[1], eth[2]))
+
+main()
+
+def ipv4_head(raw_data):
+    vers_head_len = raw_data[0]
+    version = vers_head_len >> 4
+    head_len = (vers_head_len & 15) * 4
+    ttl, proto, src, target =  Struct.unpack('! 8x B B 2x 4s 4s', raw_data[:20])
