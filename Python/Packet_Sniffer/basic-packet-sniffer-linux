@@ -1,1 +1,9 @@
 import socket
+
+#Create INET socket
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+
+#Print data packet information to console
+while True:
+    print(s.recvfrom(65565))
+
