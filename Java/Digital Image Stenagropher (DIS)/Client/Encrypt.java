@@ -18,5 +18,15 @@ public class Encrypt extends JFrame implements ActionListener {
     String code = "";
     String encryptedInfo = "";
     String userKey = "";
+    Container container;
 
+    Encrypt(){
+        super("Encrypt");
+        container = getContentPane();
+        container.setLayout(null);
+
+        codeJLabel = new JLabel("Security Code");
+        codeJLabel.setBounds(230, 100, 150, 50);
+
+    }
 }
