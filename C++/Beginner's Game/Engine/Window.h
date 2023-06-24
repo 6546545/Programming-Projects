@@ -1,5 +1,5 @@
 #pragma once
-#include <C++>
+#include <GLFW/glfw3.h>
 
 class Window
 {
