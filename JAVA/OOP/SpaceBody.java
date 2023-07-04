@@ -1,12 +1,12 @@
 package OOP;
 
-import java.util.Vector;
+//import java.util.Vector;
 
 public class SpaceBody {
 
     private String type;
     private String name;
-    //Random seed gets generated to make procedurally generated objects
+    //Random seed gets generated to make procedurally generated objects. Seed needs to be generated from algorithms
     //Differs in usage among child classes
     private Long randSeed;
 
@@ -14,7 +14,7 @@ public class SpaceBody {
     private int bodySize;
 
     private double gravity;
-    private Vector gravVector;
+    //private Vector gravVector;
 
     public SpaceBody(){
         type = "";
