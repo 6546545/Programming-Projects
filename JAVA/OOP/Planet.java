@@ -5,11 +5,9 @@ import java.util.List;
 //SpaceBody Class ---> Planet Class
 
 public class Planet extends SpaceBody{
-    private Long randSeed;
-    private List<String> randName;
+  
     private boolean hasAtmosphere;
     private boolean isGasGiant;
-
     private List<String> atmoshpere;
 
     private List<Object> plants;
@@ -17,7 +15,7 @@ public class Planet extends SpaceBody{
     private List<Object> moons;
 
     public Planet(){
-        super();
+        //@TODO 
     }
 
      public boolean isGasGiant() {
@@ -26,24 +24,6 @@ public class Planet extends SpaceBody{
 
     public void setGasGiant(boolean isGasGiant) {
         this.isGasGiant = isGasGiant;
-    }
-
-
-
-    public Long getRandSeed() {
-        return randSeed;
-    }
-
-    public void setRandSeed(Long randSeed) {
-        this.randSeed = randSeed;
-    }
-
-    public List<String> getRandName() {
-        return randName;
-    }
-
-    public void setRandName(List<String> randName) {
-        this.randName = randName;
     }
 
     public boolean isHasAtmosphere() {

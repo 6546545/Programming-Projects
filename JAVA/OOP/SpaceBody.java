@@ -3,6 +3,8 @@ package OOP;
 public class SpaceBody {
     private String type;
     private String name;
+    private Long randSeed;
+
     private int bodySize;
     private double gravity;
 
@@ -20,8 +22,6 @@ public class SpaceBody {
         gravity = grav;
     }
 
-
-
     public String getType() {
         return type;
     }
@@ -34,6 +34,15 @@ public class SpaceBody {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Long getRandSeed(){
+        return randSeed;
+    }
+    public void setRandSeed(Long seed){
+        this.randSeed = seed;
+    }
+
+
     public int getBodySize() {
         return bodySize;
     }
@@ -43,7 +52,7 @@ public class SpaceBody {
     public double getGravity() {
         return gravity;
     }
-    public void setGravity(long gravity) {
+    public void setGravity(double gravity) {
         this.gravity = gravity;
     }
 
