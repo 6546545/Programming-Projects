@@ -8,8 +8,10 @@ public class Planet extends SpaceBody{
   
     private boolean hasAtmosphere;
     private boolean isGasGiant;
+    //List of Atmospheric components: Gas types
     private List<String> atmoshpere;
 
+    //Lists of plants, animals, and moons for each planet
     private List<Object> plants;
     private List<Object> animals;
     private List<Object> moons;
