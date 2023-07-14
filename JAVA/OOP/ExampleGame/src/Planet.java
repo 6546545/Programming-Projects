@@ -1,4 +1,4 @@
-package OOP.src;
+package OOP.ExampleGame.src;
 
 import java.util.List;
 

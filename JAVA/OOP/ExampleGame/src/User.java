@@ -1,1 +1,1 @@
-package OOP.src;
+package OOP.ExampleGame.src;

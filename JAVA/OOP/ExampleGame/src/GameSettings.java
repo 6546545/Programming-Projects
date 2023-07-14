@@ -1,4 +1,4 @@
-package OOP.src;
+package OOP.ExampleGame.src;
 
 
 public class GameSettings {
