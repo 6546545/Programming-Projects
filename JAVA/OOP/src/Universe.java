@@ -1,7 +1,11 @@
 package OOP.src;
 
-public class Universe extends Object {
+public class Universe {
+    public Universe(){
+    
 
+    }
+    
 }
 
 

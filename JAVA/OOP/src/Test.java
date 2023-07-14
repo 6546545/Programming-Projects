@@ -1,19 +1,25 @@
 package OOP.src;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import java.awt.Canvas;
+import java.awt.Color;
 
 public class Test {
     public static void main(String[] args) {
         JFrame window = new JFrame("Test Window");
         JTextField title = new JTextField("Title");
-        //title.setLocation(window.getWidth()-(0.5 * window.getWidth()), window.getHeight()-(0.5 * window.getHeight()));
+        Canvas canvas = new Canvas();
+    
+        canvas.setBackground(Color.BLACK);
         title.setEditable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.add(title, 0);
+        window.add(canvas, 0);
+    
         window.setSize(1920, 1080);
         window.setVisible(true);
 
-
+        System.setProperty("sun.awt.noerasebackground", "true");
+        new Universe();
     
 
 
