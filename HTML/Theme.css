@@ -1,0 +1,15 @@
+body{background-color: #080710;}
+.background{
+    width: 430px;
+    height: 480px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    width: 200;
+    height: 200;
+    position: absolute;
+    border-radius: 50%;
+}
