@@ -1,5 +1,8 @@
 package OOP.ExampleGame.src;
-
+//import java.awt.Graphics2D;
+//import java.awt.Canvas;
+import java.awt.Shape;
+import java.awt.geom.Ellipse2D;
 import java.util.List;
 
 //SpaceBody Class ---> Planet Class
@@ -15,9 +18,36 @@ public class Planet extends SpaceBody{
     private List<Object> plants;
     private List<Object> animals;
     private List<Object> moons;
+    private boolean hasOcean;
+    private Object planetModel;
+    private Shape planetShape;
 
     public Planet(){
-        //@TODO 
+        //@TODO
+        planetShape = new Ellipse2D.Double(100,100,100,100);
+    }
+
+    /**
+     * @return planetShape
+     */
+    public Shape getShape(){
+        return planetShape;
+    }
+
+    public boolean isHasOcean() {
+        return hasOcean;
+    }
+
+    public void setHasOcean(boolean hasOcean) {
+        this.hasOcean = hasOcean;
+    }
+
+    public Object getPlanetModel() {
+        return planetModel;
+    }
+
+    public void setPlanetModel(Object planetModel) {
+        this.planetModel = planetModel;
     }
 
      public boolean isGasGiant() {
