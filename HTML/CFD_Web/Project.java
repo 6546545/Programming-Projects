@@ -1,6 +1,7 @@
 package CFD_Web;
 
 import java.io.File;
+import java.sql.Array;
 import java.util.List;
 
 /**
@@ -12,15 +13,17 @@ public class Project {
     private Object model;
     private File filepath;
     private File outFile;
-    private List<String> options;
+    private String[] options;
    
-    public Project(String name, String id, Object model, File filepath, File outFile, List<String> options) {
+    public Project(String name, String id, Object model, File filepath, File outFile) {
         this.name = name;
         this.id = id;
         this.model = model;
         this.filepath = filepath;
         this.outFile = outFile;
-        this.options = options;
+
+        String[] tmp = {"Gravity", "Flow Strength", "Flow Direction"};
+        this.options = tmp;
     }
 
 
@@ -57,10 +60,10 @@ public class Project {
     public void setOutFile(File outFile) {
         this.outFile = outFile;
     }
-    public List<String> getOptions() {
+    public String[] getOptions() {
         return options;
     }
-    public void setOptions(List<String> options) {
+    public void setOptions(String[] options) {
         this.options = options;
     }
     
