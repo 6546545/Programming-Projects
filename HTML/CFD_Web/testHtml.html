@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek 3D Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin: 40px 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #f9f9f9;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+        }
+
+        .hero:hover {
+            transform: translateZ(50px);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: translateZ(50px);
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .cta p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Brand</h1>
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Welcome to Our Sleek 3D Landing Page</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper turpis in lectus tristique, in fermentum lorem finibus. Integer euismod scelerisque justo, id cursus tellus laoreet in.</p>
+        </section>
+
+        <section class="cta">
+            <h2>Discover Our Awesome Product</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper turpis in lectus tristique, in fermentum lorem finibus.</p>
+            <button>Get Started</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Brand. All rights reserved.</p>
+    </footer>
+</body>
+</html>
