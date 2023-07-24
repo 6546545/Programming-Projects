@@ -5,11 +5,11 @@ import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class keyboardHandler implements KeyListener {
+public class KeyboardHandler implements KeyListener {
 
     private Map<Integer, Boolean> keyMap; // Map to track the status of each key
 
-    public keyboardHandler() {
+    public KeyboardHandler() {
         keyMap = new HashMap<>();
     }
 

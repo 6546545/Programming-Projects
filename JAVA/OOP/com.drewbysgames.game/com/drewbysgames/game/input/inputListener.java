@@ -1,6 +1,6 @@
 package com.drewbysgames.game.input;
 
-public interface inputListener {
+public interface InputListener {
     void onKeyPress(int keyCode);
     void onKeyRelease(int keyCode);
     void onMousePress(int button, int x, int y);

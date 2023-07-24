@@ -4,13 +4,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class mouseHandler implements MouseListener, MouseMotionListener {
+public class MouseHandler implements MouseListener, MouseMotionListener {
 
     private boolean[] mouseButtons; // Array to track the status of each mouse button
     private int mouseX; // Current X-coordinate of the mouse
     private int mouseY; // Current Y-coordinate of the mouse
 
-    public mouseHandler() {
+    public MouseHandler() {
         mouseButtons = new boolean[5];
     }
 

@@ -3,49 +3,49 @@ package com.drewbysgames.game.audio;
 import java.util.HashMap;
 import java.util.Map;
 
-public class audioManager {
+public class AudioManager {
 
-    private Map<String, soundEffect> soundEffects;
-    private Map<String, musicTrack> musicTracks;
+    private Map<String, SoundEffect> soundEffects;
+    private Map<String, MusicTrack> musicTracks;
 
-    public audioManager() {
+    public AudioManager() {
         soundEffects = new HashMap<>();
         musicTracks = new HashMap<>();
     }
 
     public void addSoundEffect(String name, String filePath) {
-        soundEffect soundEffect = new soundEffect(filePath);
+        SoundEffect soundEffect = new SoundEffect(filePath);
         soundEffects.put(name, soundEffect);
     }
 
     public void addMusicTrack(String name, String filePath) {
-        musicTrack musicTrack = new musicTrack(filePath);
+        MusicTrack musicTrack = new MusicTrack(filePath);
         musicTracks.put(name, musicTrack);
     }
 
     public void playSoundEffect(String name) {
-        soundEffect soundEffect = soundEffects.get(name);
+        SoundEffect soundEffect = soundEffects.get(name);
         if (soundEffect != null) {
             soundEffect.play();
         }
     }
 
     public void stopSoundEffect(String name) {
-        soundEffect soundEffect = soundEffects.get(name);
+        SoundEffect soundEffect = soundEffects.get(name);
         if (soundEffect != null) {
             soundEffect.stop();
         }
     }
 
     public void playMusicTrack(String name) {
-        musicTrack musicTrack = musicTracks.get(name);
+        MusicTrack musicTrack = musicTracks.get(name);
         if (musicTrack != null) {
             musicTrack.play();
         }
     }
 
     public void stopMusicTrack(String name) {
-        musicTrack musicTrack = musicTracks.get(name);
+        MusicTrack musicTrack = musicTracks.get(name);
         if (musicTrack != null) {
             musicTrack.stop();
         }

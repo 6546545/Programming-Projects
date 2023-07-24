@@ -6,13 +6,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class inputManager implements KeyListener, MouseListener, MouseMotionListener {
+public class InputManager implements KeyListener, MouseListener, MouseMotionListener {
     private boolean[] keys; // Array to track the status of each key
     private boolean[] mouseButtons; // Array to track the status of each mouse button
     private int mouseX; // Current X-coordinate of the mouse
     private int mouseY; // Current Y-coordinate of the mouse
 
-    public inputManager() {
+    public InputManager() {
         keys = new boolean[256];
         mouseButtons = new boolean[5];
     }
