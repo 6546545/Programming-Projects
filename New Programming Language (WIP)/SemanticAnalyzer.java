@@ -23,19 +23,19 @@ public class SemanticAnalyzer {
             analyzeNode(child);
         }
     }
-    private String analyzeExpress(ExpressNode node) {
-        if (node.isLiteral()) {
-            return node.getType();
-        } else if (node.isVarRef()) {
-            String varName = node.getVarName();
+    private String analyzeExpress(ASTNode astNode) {
+        if (astNode.isLiteral()) {
+            return astNode.getType();
+        } else if (astNode.isVarRef()) {
+            String varName = astNode.getVarName();
             if (!symbolTable.containsKey(varName)) {
                 throw new RuntimeException("Variable '" + varName + "' is not declared.");
             }
             return symbolTable.get(varName);
-        } else if (node.isBinaryOp()) {
-            String leftType = analyzeExpress(node.getLeftOp());
-            String rightType = analyzeExpress(node.getRightOp());
-            String op = node.getOp();
+        } else if (astNode.isBinaryOp()) {
+            String leftType = analyzeExpress(astNode.getLeftOp());
+            String rightType = analyzeExpress(astNode.getRightOp());
+            String op = astNode.getOp();
 
             if (!isOpSupported(op) || !isTypeCompatible(leftType, rightType)) {
                 throw new RuntimeException("Invalid operator or type mismatch in expression.");
@@ -46,8 +46,29 @@ public class SemanticAnalyzer {
             
         
     }
+    private String getResultTypeForOp(String op, String leftType, String rightType) {
+        if (op.equals("+")||op.equals("-")||op.equals("*")||op.equals("/")) {
+            return "int";
+        }
+        throw new RuntimeException("Unsupported operator: " + op);
+    }
+    private boolean isTypeCompatible(String leftType, String rightType) {
+        return leftType.equals(rightType);
+    }
+    private boolean isOpSupported(String op) {
+        return op.equals("+")||op.equals("-")||op.equals("*")||op.equals("/");
+    }
     private void analyzeIf(IfStatementNode node) {
-        //TODO
+        String conditionType = analyzeExpress(node.getCondition());
+
+        if (!conditionType.equals("bool")) {
+            throw new RuntimeException("The condition in the IF statement must be of type 'bool'");
+        }
+        analyzeNode(node.getThenStatement());
+
+        if (node.hasElseStatement()) {
+            analyzeNode(node.getElseStatement());
+        }
     }
     private void analyzeVarDec(VarDecNode node) {
         String VarName = node.getVarName();
@@ -57,7 +78,7 @@ public class SemanticAnalyzer {
             throw new RuntimeException("Variable '" + VarName + "' is already declared.");
         }
         if (node.hasInit()) {
-            String initType = analyzeExpress(node.getInit())
+            String initType = analyzeExpress(node.getInitializer());
             if (!isTypeCompatible(VarType, initType)) {
                 throw new RuntimeException("Type mismatch in variable '" + VarName + "' declaration.");
             }
