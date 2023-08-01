@@ -8,6 +8,7 @@ public class Parser {
         this.tokens = tokens;
         this.currIndex = 0;
     }
+    public Parser(){}
 
     private void progressIndex(){
         currIndex ++;
@@ -15,24 +16,35 @@ public class Parser {
     public void parse(){
         parsePrgm();
     }
+    public ASTNode parse(List<String> tokens){
+        this.tokens = tokens;
+        this.currIndex = 0;
+        return parsePrgm();
+    }
 
-    private void parsePrgm() {
+    private ASTNode parsePrgm() {
+        ASTNode root = new ASTNode();
         while (currIndex < tokens.size()) {
-            parseStatement();
+            ASTNode statement = parseStatement();
+            if (statement!=null) {
+                root.addChild(statement);
+            }
         }
+        return root;
     }
 
 /// SUBJECT TO CHANGE IN FURTHER UPDATES
-    private void parseStatement() {
+    private ASTNode parseStatement() {
         if (match("let")) {
-            parseVarDec();
+            return parseVarDec();
         } else if (match("if")) {
-            parseIf();
+            return parseIf();
         } else {
-            parseExpress();
+            return parseExpress();
         }
     }
-private void parseExpress() {
+private ASTNode parseExpress() {
+    
     parseTerm();
     while (match("+")||match("-")) {
         progressIndex();
@@ -104,21 +116,28 @@ private void parseExpress() {
     /*
  * Parses IF - Then - Else Statements
  */
-    private void parseIf() {
+    private ASTNode parseIf() {
         expect("if");
-        pareseExpress();
+        ASTNode condition = parseExpress();
         expect("then");
-        parseStatement();
+        ASTNode thenStatement = parseStatement();
 
+        ASTNode elseStatement = null;
         if (match("else")) {
             progressIndex();
-            parseStatement();
+            elseStatement = parseStatement();
         }
         expect("end");
         //AST Nodes for further processing
+        return new IfStatementNode(condition, thenStatement,elseStatement);
     }
 
-    private void pareseExpress() {
+    private ASTNode pareseExpress() {
+        /*
+         * Implement parsing expressions based on Grammer rules: TBD
+         */
+
+
         parseTerm();
 
         while (match("+") || match("-")) {
@@ -126,9 +145,10 @@ private void parseExpress() {
             parseTerm();
         }
         //AST Nodes for further processing
+        return new ExpressNode(null, null);
     }
 
-    private void parseVarDec() {
+    private ASTNode parseVarDec() {
         //SUBJECT TO CHANGE IN FURTHER UPDATES
         expect("let");
         String varName = expectIdent();
@@ -143,6 +163,12 @@ private void parseExpress() {
         }
         parseExpress();
         //AST Nodes for further processing
+        ASTNode init = parseExpress();
+        VarDecNode varDecNode = new VarDecNode(varName, varType);
+        if (init!=null) {
+            varDecNode.setInitilizer(init);   
+        }
+        return varDecNode;
     }
 
     private String expectType() {
