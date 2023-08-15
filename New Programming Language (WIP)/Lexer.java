@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Lexer {
     private String input;
     private int position = 0;
