@@ -1,6 +1,6 @@
 public class Lexer {
     private String input;
-    private int position = 0;
+    private int position = -1;
 
     public Lexer(String input) {
         this.input = input;
@@ -21,6 +21,10 @@ public class Lexer {
         } else if (currentChar == '-') {
             position++;
             return new Token(Token.TokenType.MINUS, "-");
+        } else if (currentChar == '/'){
+            position++;
+        } else if (currentChar == '*'){
+            position++;
         }
 
         throw new IllegalArgumentException("Invalid character: " + currentChar);

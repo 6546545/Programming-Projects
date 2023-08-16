@@ -1,3 +1,4 @@
+
 public class Parser {
     private final Lexer lexer;
     private Token currentToken;
@@ -25,6 +26,12 @@ public class Parser {
             } else if (opToken.type == Token.TokenType.MINUS) {
                 eat(Token.TokenType.MINUS);
                 result -= parseTerm();
+            }else if (opToken.type == Token.TokenType.DIVIDE){
+                eat(Token.TokenType.DIVIDE);
+                result /= parseTerm();
+            }else if (opToken.type == Token.TokenType.MULTIPLY){
+                eat(Token.TokenType.MULTIPLY);
+                result *= parseTerm();
             }
         }
         return result;

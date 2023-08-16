@@ -11,7 +11,7 @@ public class Token {
         HASHMAP,
         PLUS,
         MINUS,
-        MULTIPLE,
+        MULTIPLY,
         DIVIDE,
         LPARENTH,
         RPARENTH,
