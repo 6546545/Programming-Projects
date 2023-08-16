@@ -1,8 +1,17 @@
 public class Token {
     public enum TokenType {
         INTEGER,
+        FLOAT,
+        STRING,
+        BOOL,
+        OBJECT,
+        ARRAY,
         PLUS,
         MINUS,
+        MULTIPLE,
+        DIVIDE,
+        LPARENTH,
+        RPARENTH,
         EOF // End of File
     }
 
