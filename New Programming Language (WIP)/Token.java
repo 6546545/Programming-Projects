@@ -18,7 +18,13 @@ public class Token {
         BYTE,
         STATIC,
         VOLITILE,
-        
+        KEYWORD, //Potential for new Keywords to be added?
+        AUTO,
+        ABSTRACT,
+        THROW,
+        CATCH,
+        DO,
+
 
         //Operators
         PLUS,
@@ -27,6 +33,7 @@ public class Token {
         DIVIDE,
         LPARENTH,
         RPARENTH,
+        DECIMAL, // Token ' . ' in 1.45
 
         //Program Flow
         IF,
@@ -38,6 +45,8 @@ public class Token {
         MEM, //Memory Management
         SWITCH,
         CASE,
+        BREAK,
+        DOT, // Token ' . ' in Tonken.TokenType.DOT
 
         EOF // End of File
     }
