@@ -27,6 +27,12 @@ public class Lexer {
         } else if (currentChar == '*'){
             position++;
             return new Token(Token.TokenType.MULTIPLY, "*");
+        }else if (currentChar == '('){
+            position++;
+            return new Token(Token.TokenType.RPARENTH, "(");
+        }else if (currentChar == ')'){
+            position++;
+            return new Token(Token.TokenType.LPARENTH, ")");
         }
 
         throw new IllegalArgumentException("Invalid character: " + currentChar);

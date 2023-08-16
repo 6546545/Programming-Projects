@@ -1,5 +1,4 @@
 
-
 public class Parser {
     private final Lexer lexer;
     private Token currentToken;
@@ -19,7 +18,9 @@ public class Parser {
 
     public int parse() {
         int result = parseTerm();
-        while (currentToken.type == Token.TokenType.PLUS || currentToken.type == Token.TokenType.MINUS || currentToken.type == Token.TokenType.DIVIDE || currentToken.type == Token.TokenType.MULTIPLY) {
+        while (currentToken.type == Token.TokenType.PLUS || currentToken.type == Token.TokenType.MINUS 
+        || currentToken.type == Token.TokenType.DIVIDE || currentToken.type == Token.TokenType.MULTIPLY
+        || currentToken.type == Token.TokenType.RPARENTH || currentToken.type == Token.TokenType.LPARENTH) {
             Token opToken = currentToken;
             if (opToken.type == Token.TokenType.PLUS) {
                 eat(Token.TokenType.PLUS);
@@ -33,6 +34,12 @@ public class Parser {
             }else if (opToken.type == Token.TokenType.MULTIPLY){
                 eat(Token.TokenType.MULTIPLY);
                 result *= parseTerm();
+            }else if (opToken.type == Token.TokenType.RPARENTH){
+                eat(Token.TokenType.RPARENTH);
+                //@TODO: ODER OF OPERATIONS
+            }else if (opToken.type == Token.TokenType.LPARENTH){
+                eat(Token.TokenType.LPARENTH);
+                //@TODO: ORDER OF OPERATIONS
             }
         }
         return result;
