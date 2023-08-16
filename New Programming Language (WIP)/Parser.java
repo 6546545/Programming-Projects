@@ -1,4 +1,5 @@
 
+
 public class Parser {
     private final Lexer lexer;
     private Token currentToken;
@@ -18,7 +19,7 @@ public class Parser {
 
     public int parse() {
         int result = parseTerm();
-        while (currentToken.type == Token.TokenType.PLUS || currentToken.type == Token.TokenType.MINUS) {
+        while (currentToken.type == Token.TokenType.PLUS || currentToken.type == Token.TokenType.MINUS || currentToken.type == Token.TokenType.DIVIDE || currentToken.type == Token.TokenType.MULTIPLY) {
             Token opToken = currentToken;
             if (opToken.type == Token.TokenType.PLUS) {
                 eat(Token.TokenType.PLUS);
@@ -44,7 +45,7 @@ public class Parser {
     }
 
     public static void main(String[] args) {
-        String input = "3+5-2";
+        String input = "3-2+8/3*45";
         Lexer lexer = new Lexer(input);
         Parser parser = new Parser(lexer);
 

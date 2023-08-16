@@ -1,6 +1,6 @@
 public class Lexer {
     private String input;
-    private int position = -1;
+    private int position = 0;
 
     public Lexer(String input) {
         this.input = input;
@@ -23,8 +23,10 @@ public class Lexer {
             return new Token(Token.TokenType.MINUS, "-");
         } else if (currentChar == '/'){
             position++;
+            return new Token(Token.TokenType.DIVIDE, "/");
         } else if (currentChar == '*'){
             position++;
+            return new Token(Token.TokenType.MULTIPLY, "*");
         }
 
         throw new IllegalArgumentException("Invalid character: " + currentChar);
