@@ -52,6 +52,12 @@ public class Lexer {
         }else if (currentChar == '}'){
             position++;
             return new Token(Token.TokenType.RCBRACKET, "}");
+        }else if (currentChar == '|'){
+            position++;
+            return new Token(Token.TokenType.OR, "|");
+        }else if (currentChar == '&'){
+            position++;
+            return new Token(Token.TokenType.AND, "&");
         }
 
         throw new IllegalArgumentException("Invalid character: " + currentChar);
