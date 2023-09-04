@@ -2,6 +2,14 @@ package src;
 
 import src.Token.TokenType;
 
+/*
+ * This Parser class performs syntactic analysis of the tokens produced
+ *          by the Lexer class to understand the meaning behind the code.
+ *          -Initializes with a Lexer instance and the currentToken variable
+ * 
+ * 
+ * 
+ */
 public class Parser {
     private final Lexer lexer;
     private Token currentToken;

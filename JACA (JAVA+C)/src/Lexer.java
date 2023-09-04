@@ -1,5 +1,13 @@
 package src;
-
+/*
+ * 
+ * This Lexer class performs lexical analysis of input source code
+ *          and breaks it down into tokens.
+ *          -Takes in source code as an input
+ *          -Tracks the position of the current character in the file
+ * 
+ * 
+ */
 public class Lexer {
     private String input;
     private int position = 0;

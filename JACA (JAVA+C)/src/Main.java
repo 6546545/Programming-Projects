@@ -1,6 +1,10 @@
 package src;
 //import java.util.Scanner;
 
+/*
+ * This is the main class for this project.
+ * 
+ */
 public class Main {
     public static void main(String[] args) {
         Interpreter interpreter = new Interpreter();
