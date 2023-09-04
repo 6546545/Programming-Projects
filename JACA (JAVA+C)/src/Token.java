@@ -25,6 +25,7 @@ public class Token {
         THROW,
         CATCH,
         DO,
+        TRY,
         
 
         //Operators
