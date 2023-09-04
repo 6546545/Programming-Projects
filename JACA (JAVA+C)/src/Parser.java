@@ -17,24 +17,24 @@ public class Parser {
         }
     }
 
-    public int parse() {
-        int result = parseTerm();
+    public int parseInt() {
+        int result = parseIntTerm();
         while (currentToken.type == Token.TokenType.PLUS || currentToken.type == Token.TokenType.MINUS 
         || currentToken.type == Token.TokenType.DIVIDE || currentToken.type == Token.TokenType.MULTIPLY
         || currentToken.type == Token.TokenType.RPARENTH || currentToken.type == Token.TokenType.LPARENTH) {
             Token opToken = currentToken;
             if (opToken.type == Token.TokenType.PLUS) {
                 eat(Token.TokenType.PLUS);
-                result += parseTerm();
+                result += parseIntTerm();
             } else if (opToken.type == Token.TokenType.MINUS) {
                 eat(Token.TokenType.MINUS);
-                result -= parseTerm();
+                result -= parseIntTerm();
             }else if (opToken.type == Token.TokenType.DIVIDE){
                 eat(Token.TokenType.DIVIDE);
-                result /= parseTerm();
+                result /= parseIntTerm();
             }else if (opToken.type == Token.TokenType.MULTIPLY){
                 eat(Token.TokenType.MULTIPLY);
-                result *= parseTerm();
+                result *= parseIntTerm();
             }else if (opToken.type == Token.TokenType.RPARENTH){
                 eat(Token.TokenType.RPARENTH);
                 //@TODO: ODER OF OPERATIONS
@@ -46,18 +46,19 @@ public class Parser {
         return result;
     }
 
-    private int parseTerm() {
+    private int parseIntTerm() {
         int result = Integer.parseInt(currentToken.value);
         eat(Token.TokenType.INTEGER);
         return result;
     }
 
+
     public static void main(String[] args) {
-        String input = "3-2+8/3*45*.2";
+        String input = "3-2+8/3*45*2";
         Lexer lexer = new Lexer(input);
         Parser parser = new Parser(lexer);
 
-        int result = parser.parse();
+        int result = parser.parseInt();
         System.out.println("Result: " + result);
     }
 }
