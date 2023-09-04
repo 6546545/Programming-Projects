@@ -3,7 +3,9 @@ package src;
 import src.Token.TokenType;
 
 /*
- * This Parser class performs syntactic analysis of the tokens produced
+ *@6546545
+ * 
+ *  This Parser class performs syntactic analysis of the tokens produced
  *          by the Lexer class to understand the meaning behind the code.
  *          -Initializes with a Lexer instance and the currentToken variable
  * 
@@ -11,14 +13,25 @@ import src.Token.TokenType;
  * 
  */
 public class Parser {
+    //Private Vars
     private final Lexer lexer;
     private Token currentToken;
 
+    /* Constructor
+     * 
+     * @param Lexer
+     */
     public Parser(Lexer lexer) {
         this.lexer = lexer;
         this.currentToken = lexer.nextToken();
     }
 
+    /* Eat
+     *  Consumes the cuurent Token and advances to next one
+     * 
+     * @param Token.TokenType
+     * @throws IllegalArgumentException
+     */
     private void eat(Token.TokenType expectedType) {
         if (currentToken.type == expectedType) {
             currentToken = lexer.nextToken();
@@ -27,6 +40,15 @@ public class Parser {
         }
     }
 
+    /* Parse Int
+     *  Parses logic based on algebraic expressions.
+     *  -Subtraction
+     *  -Addition
+     *  -Multiplication
+     *  -Division
+     * 
+     * @return int results
+     */
     public int parseInt() {
         int result = parseIntTerm();
         while (currentToken.type == Token.TokenType.PLUS || currentToken.type == Token.TokenType.MINUS 
@@ -55,6 +77,12 @@ public class Parser {
         }
         return result;
     }
+
+    /* Parse Text
+     *  Parses semantic and synactical expressions using keywords.
+     * 
+     * @returns String results
+     */
     public String parseText(){
         String result = parseStringTerm();
 
@@ -174,18 +202,29 @@ public class Parser {
         return result;
     }
 
+    /* ParseIntTerm
+     *  Parses integers.
+     * 
+     * @return int results
+     */
     private int parseIntTerm() {
         int result = Integer.parseInt(currentToken.value);
         eat(Token.TokenType.INTEGER);
         return result;
     }
+
+    /* Parse String Term
+     *  Parses text.
+     * 
+     * @return String results
+     */
     private String parseStringTerm(){
         //@TODO: Parse String Terms
         //@TODO: Add all Text-based Token Types: Keywords, Program Flow etc.
         return "null";
     }
 
-
+//Temporary Main Method for debugging purposes
     public static void main(String[] args) {
         String input = "3-2+8/3*45*2";
         Lexer lexer = new Lexer(input);
