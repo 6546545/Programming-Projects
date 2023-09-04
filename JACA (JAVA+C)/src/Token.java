@@ -48,12 +48,12 @@ public class Token {
         BREAK,
         SEMICOLON, //Added to Lexer               End of Line
         EOF, // End of File
-        LBRACKET,
-        RBRACKET,
-        LCBRACKET,
-        RCBRACKET,
-        OR,
-        AND,
+        LBRACKET, //Added to Lexer
+        RBRACKET, //Added to Lexer
+        LCBRACKET, //Added to Lexer
+        RCBRACKET, //Added to Lexer
+        OR, //Added to Lexer
+        AND, //Added to Lexer
         //SPECIAL
         CLASS
     }
