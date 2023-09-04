@@ -45,8 +45,11 @@ public class Token {
         SWITCH,
         CASE,
         BREAK,
+        SEMICOLON, //End of Line
+        EOF, // End of File
 
-        EOF // End of File
+        //SPECIAL
+        CLASS
     }
 
     public TokenType type;
