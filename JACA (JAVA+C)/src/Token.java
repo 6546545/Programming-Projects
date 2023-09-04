@@ -1,5 +1,6 @@
 package src;
 /*
+ * @6546545
  * 
  * The Token class is represents the tokens produced from
  *         the operation of the Lexer class.
@@ -72,11 +73,17 @@ public class Token {
     public TokenType type;
     public String value;
 
+    /*
+     * @param TokenType, String
+     */
     public Token(TokenType type, String value) {
         this.type = type;
         this.value = value;
     }
 
+    /*
+     * @return the String type and value
+     */
     @Override
     public String toString() {
         return "(" + type + ", " + value + ")";
