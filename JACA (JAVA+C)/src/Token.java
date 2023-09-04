@@ -1,4 +1,14 @@
 package src;
+/*
+ * 
+ * The Token class is represents the tokens produced from
+ *         the operation of the Lexer class.
+ *          -Represents Integers, Operators, and End of File
+ * 
+ * 
+ * 
+ * 
+ */
 public class Token {
     public enum TokenType {
         //Var Types

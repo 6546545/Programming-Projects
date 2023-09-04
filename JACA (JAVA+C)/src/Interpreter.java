@@ -1,7 +1,13 @@
 package src;
 import java.util.HashMap;
 import java.util.Map;
-
+/*
+ * 
+ * This Interpreter class performs 
+ * 
+ * 
+ * 
+ */
 public class Interpreter {
     Map<String, Integer> variables;
 
