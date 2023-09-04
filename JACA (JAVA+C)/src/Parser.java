@@ -1,3 +1,4 @@
+package src;
 
 public class Parser {
     private final Lexer lexer;
