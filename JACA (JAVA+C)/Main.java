@@ -1,14 +1,13 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner inoutScanner = new Scanner(System.in);
-        String input = inoutScanner.nextLine();
-        inoutScanner.close();
-        while (input!=null) {
-            System.out.println("TRUE");
+        Interpreter interpreter = new Interpreter();
+        String code = "x = 10\n" +
+                    "y = 5\n" + //To see error change to '+='
+                    "z = 7";
 
-            return;
-        }
+        interpreter.execute(code);
+        System.out.println(interpreter.variables);
     }
 }

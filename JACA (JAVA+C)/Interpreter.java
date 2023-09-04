@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Interpreter {
-    private Map<String, Integer> variables;
+    Map<String, Integer> variables;
 
     public Interpreter() {
         variables = new HashMap<>();
@@ -37,17 +37,5 @@ public class Interpreter {
             }
         }
     }
-//TEST CASE
 
-    public static void main(String[] args) {
-        Interpreter interpreter = new Interpreter();
-
-        String code = "x = 10\n" +
-                      "y += 5\n" +
-                      "z = 7";
-
-        interpreter.execute(code);
-
-        System.out.println(interpreter.variables);
-    }
 }
