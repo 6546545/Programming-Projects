@@ -115,4 +115,16 @@ public class Lexer {
         }
         return new Token(Token.TokenType.STRING, sb.toString());
     }
+    private Token tokenize(){
+        int length = this.input.length();
+        int pos = 0;
+        String tokens[];
+        String KEYWORDS[];
+        
+
+        for (int i = 0; i <50; i++) {
+            tokens[i] = Token.getTokens(i);
+        }
+
+    }
 }

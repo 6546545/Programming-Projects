@@ -232,5 +232,7 @@ public class Parser {
 
         int result = parser.parseInt();
         System.out.println("Result: " + result);
+
+        System.out.println(Token.TokenType.AND);
     }
 }
