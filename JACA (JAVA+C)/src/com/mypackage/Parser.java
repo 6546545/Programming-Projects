@@ -3,19 +3,8 @@ package src.com.mypackage;
 
 
 
-/*
- *@6546545
- * 
- *  This Parser class performs syntactic analysis of the tokens produced
- *          by the Lexer class to understand the meaning behind the code.
- *          -Initializes with a Lexer instance and the currentToken variable
- * 
- * 
- * 
- */
-
-import Token;
-import Token.TokenType;
+import src.Token;
+import src.Token.TokenType;
 
 public class Parser {
     //Private Vars
