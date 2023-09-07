@@ -33,6 +33,75 @@ public class Lexer {
         this.input = input;
     }
 
+
+        private List<Token> tokenize(){
+            String KEYWORDS[] = {"int", "fl", "Str", "bool","Obj", "arr", "dict", "Hashmap", "char", "long", "void", "dbl", "enum", "byte", "static",
+                "vol", "keyword", "auto", "abs", "throw", "catch", "do", "try", "class", "if", "else", "while", "return", "for", 
+                 "elif", "mem", "switch", "case", "break", "public", "private", "final", "print",","};
+            List<Token> tokens = new ArrayList<>();
+
+        while (position < input.length()) {
+            char currentChar = input.charAt(position);
+
+            if (Character.isDigit(currentChar)) {
+                StringBuilder number = new StringBuilder();
+                while (position < input.length() && Character.isDigit(input.charAt(position))) {
+                    number.append(input.charAt(position));
+                    position++;
+                }
+                tokens.add(new Token(TokenType.INTEGER, number.toString()));
+            } else if (currentChar == '+') {
+                tokens.add(new Token(TokenType.PLUS, "+"));
+                position++;
+            } else if (currentChar == '-') {
+                tokens.add(new Token(TokenType.MINUS, "-"));
+                position++;
+            } else if (currentChar == '/') {
+                tokens.add(new Token(TokenType.DIVIDE, "/"));
+                position++;
+            } else if (currentChar == '*') {
+                tokens.add(new Token(TokenType.MULTIPLY, "*"));
+                position++;
+            } else if (Character.isLetter(currentChar)) {
+                StringBuilder letter = new StringBuilder();
+                while (position < input.length() && Character.isLetter(input.charAt(position))) {
+                    letter.append(input.charAt(position));
+                    position++;
+                }
+                
+                // isKeyword?
+                boolean isKeyword = false;
+                for (int i = 0; i < KEYWORDS.length; i++) {
+                    if (KEYWORDS[i].matches(letter.toString())) {
+                        isKeyword = true;
+                    }
+                }
+                //If Keyword, create new keyword token.
+                if (isKeyword) {
+                    if (letter.toString() == "int") {
+                        tokens.add(new Token(TokenType.INTEGER, "int"));
+                        System.out.println("int");
+                        position++;
+                    } else {
+                        
+                    }
+                }else{
+                    tokens.add(new Token(TokenType.STRING, letter.toString()));
+                    
+                }
+            }
+            else if (currentChar == ' ') {
+                // Skip whitespace
+                position++;
+            } else {
+                // Handle unrecognized characters or tokens
+                throw new RuntimeException("Invalid character: " + currentChar);
+            }
+        }
+
+        return tokens;
+    }
+
     /* Next Token 
      *  Returns the next Token 
      * 
@@ -128,47 +197,9 @@ public class Lexer {
     }
 
 
-
-
-
-
-
-
-
-
-    private List<Token> tokenize(){
-                List<Token> tokens = new ArrayList<>();
-
-        while (position < input.length()) {
-            char currentChar = input.charAt(position);
-
-            if (Character.isDigit(currentChar)) {
-                StringBuilder number = new StringBuilder();
-                while (position < input.length() && Character.isDigit(input.charAt(position))) {
-                    number.append(input.charAt(position));
-                    position++;
-                }
-                tokens.add(new Token(TokenType.INTEGER, number.toString()));
-            } else if (currentChar == '+') {
-                tokens.add(new Token(TokenType.PLUS, "+"));
-                position++;
-            } else if (currentChar == '-') {
-                tokens.add(new Token(TokenType.MINUS, "-"));
-                position++;
-            } else if (currentChar == ' ') {
-                // Skip whitespace
-                position++;
-            } else {
-                // Handle unrecognized characters or tokens
-                throw new RuntimeException("Invalid character: " + currentChar);
-            }
-        }
-
-        return tokens;
-    }
-
+//====================================================================================================================
     public static void main(String[] args) {
-        String input = "3 + 42 - 17";
+        String input = "int"; // 3 + 42 - 17 / 3 * 4
         Lexer lexer = new Lexer(input);
         List<Token> tokens = lexer.tokenize();
 
