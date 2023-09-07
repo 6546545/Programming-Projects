@@ -14,6 +14,7 @@ public class Cyrus {
         String[] KEYWORDS = {"print"};
 
         CharSequence allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+        String allowedCharsString = String.valueOf(allowedChars);
         
         while (pos < len) {
             char currChar = this.code.charAt(pos);
@@ -39,10 +40,12 @@ public class Cyrus {
                 String tempString = String.valueOf(currChar);
                 pos++;
 
-                while (allowedChars.toString().matches(String.valueOf(this.code.charAt(pos))) && pos < len) {
+                while (allowedChars.toString().contains(String.valueOf(currChar)) && pos < len) {
                     tempString += this.code.charAt(pos);
+                    pos++;
+
                 }
-                if (!KEYWORDS.toString().matches(tempString)) {
+                if (!tempString.matches(KEYWORDS[0])) {
                     throw new Error("Unexpected token: " + tempString);
                 }
                 tokens.put("keyword", tempString);
