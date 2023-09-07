@@ -1,5 +1,4 @@
-package src;
-//import java.util.Scanner;
+
 
 /*
  * This is the main class for this project.

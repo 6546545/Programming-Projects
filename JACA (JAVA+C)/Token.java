@@ -1,4 +1,4 @@
-package src;
+
 /*
  * @6546545
  * 
@@ -72,17 +72,13 @@ public class Token {
 
     public TokenType type;
     public String value;
-    public String[] KEYWORDS = {"int", "fl", "Str", "bool","Obj", "arr", "dict", "Hashmap", "char", "long", "void", "dbl", "enum", "byte", "static",
-                            "vol", "keyword", "auto", "abs", "throw", "catch", "do", "try", "class", "if", "else", "while", "return", "for", 
-                            "elif", "mem", "switch", "case", "break", "public", "private", "final"};
-
+    
     /*
      * @param TokenType, String
      */
-    public Token(TokenType type, String value, String[] keywords) {
+    public Token(TokenType type, String value) {
         this.type = type;
         this.value = value;
-        this.KEYWORDS = keywords;
         
     }
 
@@ -93,5 +89,7 @@ public class Token {
     public String toString() {
         return "(" + type + ", " + value + ")";
     }
+
+
     
 }

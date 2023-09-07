@@ -1,6 +1,6 @@
-package src;
 
-import src.Token.TokenType;
+
+
 
 /*
  *@6546545
@@ -87,115 +87,115 @@ public class Parser {
         String result = parseStringTerm();
 
         //Keywords
-        while (currentToken.type == TokenType.IF || currentToken.type == TokenType.ELSE
-                || currentToken.type == TokenType.WHILE || currentToken.type == TokenType.RETURN
-                || currentToken.type == TokenType.FOR || currentToken.type == TokenType.ELIF
-                || currentToken.type == TokenType.MEM || currentToken.type == TokenType.SWITCH
-                || currentToken.type == TokenType.CASE || currentToken.type == TokenType.BREAK
-                || currentToken.type == TokenType.SEMICOLON || currentToken.type == TokenType.EOF
-                || currentToken.type == TokenType.LBRACKET || currentToken.type == TokenType.RBRACKET
-                || currentToken.type == TokenType.LCBRACKET || currentToken.type == TokenType.RCBRACKET
-                || currentToken.type == TokenType.OR || currentToken.type == TokenType.AND
-                || currentToken.type == TokenType.CLASS || currentToken.type == TokenType.INTEGER
-                || currentToken.type == TokenType.FLOAT || currentToken.type == TokenType.STRING
-                || currentToken.type == TokenType.BOOL || currentToken.type == TokenType.OBJECT
-                || currentToken.type == TokenType.ARRAY || currentToken.type == TokenType.BINTREE
-                || currentToken.type == TokenType.DICT || currentToken.type == TokenType.HASHMAP
-                || currentToken.type == TokenType.CHAR || currentToken.type == TokenType.LONG
-                || currentToken.type == TokenType.VOID || currentToken.type == TokenType.DOUBLE
-                || currentToken.type == TokenType.ENUM || currentToken.type == TokenType.BYTE
-                || currentToken.type == TokenType.STATIC || currentToken.type == TokenType.VOLITILE
-                || currentToken.type == TokenType.KEYWORD || currentToken.type == TokenType.AUTO
-                || currentToken.type == TokenType.ABSTRACT || currentToken.type == TokenType.THROW
-                || currentToken.type == TokenType.CATCH || currentToken.type == TokenType.DO) {
+        while (currentToken.type == Token.TokenType.IF || currentToken.type == Token.TokenType.ELSE
+                || currentToken.type == Token.TokenType.WHILE || currentToken.type == Token.TokenType.RETURN
+                || currentToken.type == Token.TokenType.FOR || currentToken.type == Token.TokenType.ELIF
+                || currentToken.type == Token.TokenType.MEM || currentToken.type == Token.TokenType.SWITCH
+                || currentToken.type == Token.TokenType.CASE || currentToken.type == Token.TokenType.BREAK
+                || currentToken.type == Token.TokenType.SEMICOLON || currentToken.type == Token.TokenType.EOF
+                || currentToken.type == Token.TokenType.LBRACKET || currentToken.type == Token.TokenType.RBRACKET
+                || currentToken.type == Token.TokenType.LCBRACKET || currentToken.type == Token.TokenType.RCBRACKET
+                || currentToken.type == Token.TokenType.OR || currentToken.type == Token.TokenType.AND
+                || currentToken.type == Token.TokenType.CLASS || currentToken.type == Token.TokenType.INTEGER
+                || currentToken.type == Token.TokenType.FLOAT || currentToken.type == Token.TokenType.STRING
+                || currentToken.type == Token.TokenType.BOOL || currentToken.type == Token.TokenType.OBJECT
+                || currentToken.type == Token.TokenType.ARRAY || currentToken.type == Token.TokenType.BINTREE
+                || currentToken.type == Token.TokenType.DICT || currentToken.type == Token.TokenType.HASHMAP
+                || currentToken.type == Token.TokenType.CHAR || currentToken.type == Token.TokenType.LONG
+                || currentToken.type == Token.TokenType.VOID || currentToken.type == Token.TokenType.DOUBLE
+                || currentToken.type == Token.TokenType.ENUM || currentToken.type == Token.TokenType.BYTE
+                || currentToken.type == Token.TokenType.STATIC || currentToken.type == Token.TokenType.VOLITILE
+                || currentToken.type == Token.TokenType.KEYWORD || currentToken.type == Token.TokenType.AUTO
+                || currentToken.type == Token.TokenType.ABSTRACT || currentToken.type == Token.TokenType.THROW
+                || currentToken.type == Token.TokenType.CATCH || currentToken.type == Token.TokenType.DO) {
             Token opToken = currentToken;
 
 
             //@TODO: Implement the logic after each eat statement
-            if (opToken.type == TokenType.IF) {
+            if (opToken.type == Token.TokenType.IF) {
                 eat(Token.TokenType.IF);
                 //@TODO: Implement the logic 
-            }else if (opToken.type == TokenType.ELSE) {
+            }else if (opToken.type == Token.TokenType.ELSE) {
                 eat(Token.TokenType.ELSE);
-            }else if (opToken.type == TokenType.WHILE) {
+            }else if (opToken.type == Token.TokenType.WHILE) {
                 eat(Token.TokenType.WHILE);
-            }else if (opToken.type == TokenType.RETURN) {
+            }else if (opToken.type == Token.TokenType.RETURN) {
                 eat(Token.TokenType.RETURN);
-            }else if (opToken.type == TokenType.FOR) {
+            }else if (opToken.type == Token.TokenType.FOR) {
                 eat(Token.TokenType.FOR);
-            }else if (opToken.type == TokenType.ELIF) {
+            }else if (opToken.type == Token.TokenType.ELIF) {
                 eat(Token.TokenType.ELIF);
-            }else if (opToken.type == TokenType.MEM) {
+            }else if (opToken.type == Token.TokenType.MEM) {
                 eat(Token.TokenType.MEM);
-            }else if (opToken.type == TokenType.SWITCH) {
+            }else if (opToken.type == Token.TokenType.SWITCH) {
                 eat(Token.TokenType.SWITCH);
-            }else if (opToken.type == TokenType.CASE) {
+            }else if (opToken.type == Token.TokenType.CASE) {
                 eat(Token.TokenType.CASE);
-            }else if (opToken.type == TokenType.BREAK) {
+            }else if (opToken.type == Token.TokenType.BREAK) {
                 eat(Token.TokenType.BREAK);
-            }else if (opToken.type == TokenType.SEMICOLON) {
+            }else if (opToken.type == Token.TokenType.SEMICOLON) {
                 eat(Token.TokenType.SEMICOLON);
-            }else if (opToken.type == TokenType.EOF) {
+            }else if (opToken.type == Token.TokenType.EOF) {
                 eat(Token.TokenType.EOF);
-            }else if (opToken.type == TokenType.LBRACKET) {
+            }else if (opToken.type == Token.TokenType.LBRACKET) {
                 eat(Token.TokenType.RBRACKET);
-            }else if (opToken.type == TokenType.LCBRACKET) {
+            }else if (opToken.type == Token.TokenType.LCBRACKET) {
                 eat(Token.TokenType.LCBRACKET);
-            }else if (opToken.type == TokenType.RCBRACKET) {
+            }else if (opToken.type == Token.TokenType.RCBRACKET) {
                 eat(Token.TokenType.RCBRACKET);
-            }else if (opToken.type == TokenType.OR) {
+            }else if (opToken.type == Token.TokenType.OR) {
                 eat(Token.TokenType.OR);
-            }else if (opToken.type == TokenType.AND) {
+            }else if (opToken.type == Token.TokenType.AND) {
                 eat(Token.TokenType.AND);
-            }else if (opToken.type == TokenType.CLASS) {
+            }else if (opToken.type == Token.TokenType.CLASS) {
                 eat(Token.TokenType.CLASS);
-            }else if (opToken.type == TokenType.INTEGER) {
+            }else if (opToken.type == Token.TokenType.INTEGER) {
                 eat(Token.TokenType.INTEGER);
-            }else if (opToken.type == TokenType.FLOAT) {
+            }else if (opToken.type == Token.TokenType.FLOAT) {
                 eat(Token.TokenType.FLOAT);
-            }else if (opToken.type == TokenType.STRING) {
+            }else if (opToken.type == Token.TokenType.STRING) {
                 eat(Token.TokenType.STRING);
-            }else if (opToken.type == TokenType.BOOL) {
+            }else if (opToken.type == Token.TokenType.BOOL) {
                 eat(Token.TokenType.BOOL);
-            }else if (opToken.type == TokenType.OBJECT) {
+            }else if (opToken.type == Token.TokenType.OBJECT) {
                 eat(Token.TokenType.OBJECT);
-            }else if (opToken.type == TokenType.ARRAY) {
+            }else if (opToken.type == Token.TokenType.ARRAY) {
                 eat(Token.TokenType.ARRAY);
-            }else if (opToken.type == TokenType.BINTREE) {
+            }else if (opToken.type == Token.TokenType.BINTREE) {
                 eat(Token.TokenType.BINTREE);
-            }else if (opToken.type == TokenType.DICT) {
+            }else if (opToken.type == Token.TokenType.DICT) {
                 eat(Token.TokenType.DICT);
-            }else if (opToken.type == TokenType.HASHMAP) {
+            }else if (opToken.type == Token.TokenType.HASHMAP) {
                 eat(Token.TokenType.HASHMAP);
-            }else if (opToken.type == TokenType.CHAR) {
+            }else if (opToken.type == Token.TokenType.CHAR) {
                 eat(Token.TokenType.CHAR);
-            }else if (opToken.type == TokenType.LONG) {
+            }else if (opToken.type == Token.TokenType.LONG) {
                 eat(Token.TokenType.LONG);
-            }else if (opToken.type == TokenType.VOID) {
+            }else if (opToken.type == Token.TokenType.VOID) {
                 eat(Token.TokenType.VOID);
-            }else if (opToken.type == TokenType.DOUBLE) {
+            }else if (opToken.type == Token.TokenType.DOUBLE) {
                 eat(Token.TokenType.DOUBLE);
-            }else if (opToken.type == TokenType.ENUM) {
+            }else if (opToken.type == Token.TokenType.ENUM) {
                 eat(Token.TokenType.ENUM);
-            }else if (opToken.type == TokenType.BYTE) {
+            }else if (opToken.type == Token.TokenType.BYTE) {
                 eat(Token.TokenType.BYTE);
-            }else if (opToken.type == TokenType.STATIC) {
+            }else if (opToken.type == Token.TokenType.STATIC) {
                 eat(Token.TokenType.STATIC);
-            }else if (opToken.type == TokenType.VOLITILE) {
+            }else if (opToken.type == Token.TokenType.VOLITILE) {
                 eat(Token.TokenType.VOLITILE);
-            }else if (opToken.type == TokenType.KEYWORD) {
+            }else if (opToken.type == Token.TokenType.KEYWORD) {
                 eat(Token.TokenType.KEYWORD);
-            }else if (opToken.type == TokenType.AUTO) {
+            }else if (opToken.type == Token.TokenType.AUTO) {
                 eat(Token.TokenType.AUTO);
-            }else if (opToken.type == TokenType.ABSTRACT) {
+            }else if (opToken.type == Token.TokenType.ABSTRACT) {
                 eat(Token.TokenType.ABSTRACT);
-            }else if (opToken.type == TokenType.THROW) {
+            }else if (opToken.type == Token.TokenType.THROW) {
                 eat(Token.TokenType.THROW);
-            }else if (opToken.type == TokenType.CATCH) {
+            }else if (opToken.type == Token.TokenType.CATCH) {
                 eat(Token.TokenType.CATCH);
-            }else if (opToken.type == TokenType.DO) {
+            }else if (opToken.type == Token.TokenType.DO) {
                 eat(Token.TokenType.DO);
-            }else if (opToken.type == TokenType.TRY) {
+            }else if (opToken.type == Token.TokenType.TRY) {
                 eat(Token.TokenType.TRY);
             }
         }

@@ -1,4 +1,7 @@
-package src;
+
+
+//import src.Token.TokenType;
+
 /*
  * @6546545
  * 
@@ -9,6 +12,9 @@ package src;
  * 
  * 
  */
+
+import java.lang.reflect.Array;
+
 public class Lexer {
     
     //Private Variables
@@ -115,16 +121,98 @@ public class Lexer {
         }
         return new Token(Token.TokenType.STRING, sb.toString());
     }
-    private Token tokenize(){
+
+
+
+
+
+
+
+
+
+
+    private String[] tokenize(){
+        String result = "";
         int length = this.input.length();
         int pos = 0;
-        String tokens[];
-        String KEYWORDS[];
+        String tokens[] = new String[40];
+        String KEYWORDS[] = {"int", "fl", "Str", "bool","Obj", "arr", "dict", "Hashmap", "char", "long", "void", "dbl", "enum", "byte", "static",
+        "vol", "keyword", "auto", "abs", "throw", "catch", "do", "try", "class", "if", "else", "while", "return", "for", 
+        "elif", "mem", "switch", "case", "break", "public", "private", "final", "print",","};
         
+        String charsString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
 
-        for (int i = 0; i <50; i++) {
-            tokens[i] = Token.getTokens(i);
+        while (pos<length) {
+            char current = this.input.charAt(pos); // i
+            String firstChar = String.valueOf(current);////////////////////
+            CharSequence charSequence = this.input; //"if"
+            String currString = Character.toString(current); //currString ="if", current = i
+
+
+            if (current == ' ' || current == '\n') {
+                pos++;
+                continue;
+            }else if (current == '"') {
+                
+                pos++;
+
+                while (current != '"' && current != '\n' && pos <length) {
+                    result += current;
+                    pos++;
+                }
+                if (current != '"') {
+                    throw new Error("Variable is not a valid String.");
+                }
+                pos++;
+                for(int i = 0; i<pos; i++){
+                    for (int j = 0; j < pos; j++) {
+                        String[] tmps= {"string",result};
+                        tokens[pos] = tmps[pos];
+                    }
+                }
+
+            
+            }else if (charsString.contains(firstChar)) {
+               
+                String[] letArr = new String[length+1];
+                letArr[0]= String.valueOf(currString);
+                
+                pos++;
+
+                while (charsString.contains(currString) && pos < length) {
+                    letArr[pos] = String.valueOf(this.input.charAt(pos)); ////////////////////////////////////
+                    letArr[letArr.length-1] = ",";
+                    result = String.join(",", letArr);
+                    String tmp = result.replace(",", "");
+                    result = tmp;
+                    pos++;
+                }
+                for (int i = 0; i < length; i++) {
+                    KEYWORDS[KEYWORDS.length- 1] = ",";
+                    String tmp = String.join(",", KEYWORDS);
+                    String tmp1 = tmp.replace(",", "");
+                    if (!tmp1.contains(result)) {
+                        throw new Error("Unexpected Token:" + result);
+                    }
+                }
+                    String[] tmps= {"string",result};
+                for (int i = 0; i < tmps.length; i++) {
+                    tokens[i] = tmps[i];
+                }
+            } else {
+                throw new Error("Unexpected Character at index: " + pos + ".");
+            }
         }
-
+        return tokens;
+    }
+    public void run(){
+        //String[] TOKENS_ERROR= new String[2];
+        String[] tmp = tokenize();
+        System.out.println(tmp[0] + tmp[1]);
+    }
+    public static void main(String[] args) {
+        String test = "print 'Hello World'";
+        Lexer lex= new Lexer(test);
+        lex.run();
     }
 }
