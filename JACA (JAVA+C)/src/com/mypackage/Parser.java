@@ -4,7 +4,7 @@ package src.com.mypackage;
 
 
 import src.Token;
-import src.Token.TokenType;
+
 
 public class Parser {
     //Private Vars

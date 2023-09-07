@@ -14,9 +14,7 @@ package src.com.mypackage;
  * 
  */
 
-import java.lang.reflect.Array;
-
-import 
+import src.Token;
 
 public class Lexer {
     
