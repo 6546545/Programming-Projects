@@ -62,7 +62,15 @@ public class Lexer {
             } else if (currentChar == '*') {
                 tokens.add(new Token(TokenType.MULTIPLY, "*"));
                 position++;
-            } else if (Character.isLetter(currentChar)) {
+            } else if (currentChar == '&') {
+                tokens.add(new Token(TokenType.AND, "&"));
+                position++;
+            }else if (currentChar == '|'){
+                tokens.add(new Token(TokenType.OR, "|"));
+                position++;
+            }
+           
+            else if (Character.isLetter(currentChar)) {
                 StringBuilder letter = new StringBuilder();
                 while (position < input.length() && Character.isLetter(input.charAt(position))) {
                     letter.append(input.charAt(position));
@@ -78,17 +86,19 @@ public class Lexer {
                 }
                 //If Keyword, create new keyword token.
                 if (isKeyword) {
-                    if (letter.toString() == "int") {
+                    if (letter.toString().contains("int")) {
                         tokens.add(new Token(TokenType.INTEGER, "int"));
                         System.out.println("int");
-                        position++;
-                    } else {
                         
+                    } else if (letter.toString().contains("fl")) {
+                        tokens.add(new Token(TokenType.FLOAT, "fl"));
                     }
+                        
+                    
                 }else{
                     tokens.add(new Token(TokenType.STRING, letter.toString()));
-                    
-                }
+                }   
+                
             }
             else if (currentChar == ' ') {
                 // Skip whitespace
@@ -198,8 +208,9 @@ public class Lexer {
 
 
 //====================================================================================================================
+//TODO: Provide rules for special characters like  ',' OR '_' OR '^' etc.
     public static void main(String[] args) {
-        String input = "int"; // 3 + 42 - 17 / 3 * 4
+        String input = "print fl"; // 3 + 42 - 17 / 3 * 4
         Lexer lexer = new Lexer(input);
         List<Token> tokens = lexer.tokenize();
 
