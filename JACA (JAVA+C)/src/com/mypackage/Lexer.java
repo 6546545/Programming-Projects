@@ -1,6 +1,9 @@
 package src.com.mypackage;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import src.Token.TokenType;
 
 /*
@@ -15,6 +18,7 @@ package src.com.mypackage;
  */
 
 import src.Token;
+import src.Token.TokenType;
 
 public class Lexer {
     
@@ -132,7 +136,53 @@ public class Lexer {
 
 
 
-    private String[] tokenize(){
+    private List<Token> tokenize(){
+                List<Token> tokens = new ArrayList<>();
+
+        while (position < input.length()) {
+            char currentChar = input.charAt(position);
+
+            if (Character.isDigit(currentChar)) {
+                StringBuilder number = new StringBuilder();
+                while (position < input.length() && Character.isDigit(input.charAt(position))) {
+                    number.append(input.charAt(position));
+                    position++;
+                }
+                tokens.add(new Token(TokenType.INTEGER, number.toString()));
+            } else if (currentChar == '+') {
+                tokens.add(new Token(TokenType.PLUS, "+"));
+                position++;
+            } else if (currentChar == '-') {
+                tokens.add(new Token(TokenType.MINUS, "-"));
+                position++;
+            } else if (currentChar == ' ') {
+                // Skip whitespace
+                position++;
+            } else {
+                // Handle unrecognized characters or tokens
+                throw new RuntimeException("Invalid character: " + currentChar);
+            }
+        }
+
+        return tokens;
+    }
+
+    public static void main(String[] args) {
+        String input = "3 + 42 - 17";
+        Lexer lexer = new Lexer(input);
+        List<Token> tokens = lexer.tokenize();
+
+        for (Token token : tokens) {
+            System.out.println(token);
+        }
+    }
+
+
+
+
+/* 
+
+
         String result = "";
         int length = this.input.length();
         int pos = 0;
@@ -204,16 +254,8 @@ public class Lexer {
                 throw new Error("Unexpected Character at index: " + pos + ".");
             }
         }
-        return tokens;
-    }
-    public void run(){
-        //String[] TOKENS_ERROR= new String[2];
-        String[] tmp = tokenize();
-        System.out.println(tmp[0] + tmp[1]);
-    }
-    public static void main(String[] args) {
-        String test = "print 'Hello World'";
-        Lexer lex= new Lexer(test);
-        lex.run();
-    }
+        return tokens;*/
+    
+
+
 }
