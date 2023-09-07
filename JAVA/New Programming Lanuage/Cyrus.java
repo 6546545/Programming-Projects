@@ -57,7 +57,7 @@ public class Cyrus {
     public void run(){
         HashMap<Object, String> newMap = new HashMap<Object,String>();
         String newTokenERROR = this.tokenize().toString();
-        //newMap.put(newTokenERROR, newTokenERROR);
+        
         System.out.println(newTokenERROR);
     }
 
