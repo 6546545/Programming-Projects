@@ -54,6 +54,38 @@ public class Cyrus {
         }
         return tokens;
     }
+    
+    public void parse(String[] tokens){
+        int len = tokens.length;
+        int pos = 0;
+
+        while (pos < len) {
+            String token = tokens[pos];
+            //Implement Code
+            if (token == "keyword" && token == "print") { //token.type == keyword && token == "print"
+                if (tokens[pos+1].isEmpty()) {
+                    System.out.println("Unexpected end of line, expected a string");
+                }
+                boolean isString = false;
+                if (!tokens[pos+1].isEmpty()) {
+                    isString = true;
+                }
+
+                if (!isString) {
+                    System.out.println("Unexpected token: " + tokens[pos+1] + ", expected a string.");
+                }
+                System.out.println("\\x1b[35m%s\\x1b[0m" + tokens[pos+1]);
+                pos += 2;
+            }else{
+                System.out.println("Unexpected Token: " + tokens[pos+1]);
+                pos += 2;
+            }
+        }
+    }
+    
+    
+    
+    
     public void run(){
         HashMap<Object, String> newMap = new HashMap<Object,String>();
         String newTokenERROR = this.tokenize().toString();
@@ -61,12 +93,14 @@ public class Cyrus {
         String[] tmpString = tmp.split("=");
         newMap.put(tmpString[0], tmpString[1]);
 
+        this.parse(tmpString);
+
 
         System.out.println(newMap);
     }
 
     public static void main(String[] args) {
-        String code = "print Hello";
+        String code = "print";
         Cyrus newCyrus = new Cyrus(code);
         newCyrus.run();
     }
