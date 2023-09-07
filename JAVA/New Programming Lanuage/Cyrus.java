@@ -57,12 +57,17 @@ public class Cyrus {
     public void run(){
         HashMap<Object, String> newMap = new HashMap<Object,String>();
         String newTokenERROR = this.tokenize().toString();
-        
-        System.out.println(newTokenERROR);
+        String tmp = newTokenERROR.substring(1, newTokenERROR.length()-1);
+        String[] tmpString = tmp.split("=");
+        newMap.put(tmpString[0], tmpString[1]);
+
+
+        System.out.println(newMap);
     }
 
     public static void main(String[] args) {
-    Cyrus newCyrus = new Cyrus("print");
-    newCyrus.run();
+        String code = "print Hello";
+        Cyrus newCyrus = new Cyrus(code);
+        newCyrus.run();
     }
 }
