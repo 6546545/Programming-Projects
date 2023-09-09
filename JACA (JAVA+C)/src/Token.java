@@ -48,6 +48,8 @@ public class Token {
         DIVIDE, //Added to Lexer
         LPARENTH, //Added to Lexer
         RPARENTH, //Added to Lexer
+        SQUARED,
+        MODULUS,
 
         //Program Flow
         IF,
@@ -68,8 +70,19 @@ public class Token {
         RCBRACKET, //Added to Lexer
         OR, //Added to Lexer
         AND, //Added to Lexer
+        NOT,
+        GREATERTHAN,
+        LESSTHAN,
+        GREATER_THAN_OR_EQUAL_TO,
+        LESS_THAN_OR_EQUAL_TO,
+        
         //SPECIAL
-        CLASS
+        CLASS,
+        PUBLIC,
+        PRIVATE,
+        FINAL,
+        PRINT,
+        GENERIC
     }
 
     public TokenType type;
