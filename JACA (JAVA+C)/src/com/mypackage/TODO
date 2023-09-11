@@ -1,0 +1,9 @@
+List of Items TODO:
+    -Implement full use of Token system.
+    -Work on Interpretor
+    -Refine Syntax / structure
+    -Define memory management methods
+    -Combine C and Java libraries 
+    -Debug
+    -Work on Efficiency
+    - "Bundle" files into a shippable package
