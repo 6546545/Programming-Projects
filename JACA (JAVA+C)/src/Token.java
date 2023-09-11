@@ -82,7 +82,37 @@ public class Token {
         PRIVATE,
         FINAL,
         PRINT,
-        GENERIC
+        GENERIC,
+        //NEED TO ADD
+        ASSERT,
+        CONST,
+        CONTINUE,
+        SUPER,
+        SYNCHONIZED,
+        EXTENDS,
+        INSTANCEOF,
+        NEW,
+        PACKAGE,
+        INTERFACE,
+        THROWS,
+        TRANSIENT,
+        SHORT,
+        NATIVE,
+        IMPORT,
+        PROTECTED,
+        DEFAULT,
+        STRICTFP,
+        THIS,
+        EXTERN,
+        GOTO,
+        REGISTER,
+        SIGNED,
+        SIZEOF,
+        STRUCT,
+        TYPEDEF,
+        UNION,
+        UNSIGNED,
+        
     }
 
     public TokenType type;
