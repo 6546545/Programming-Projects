@@ -269,6 +269,12 @@ public class Lexer {
         } else if (currentChar == '>') {
             position++;
             return new Token(Token.TokenType.GREATERTHAN, ">");
+        } else if (String.valueOf(currentChar) == "<=") {
+            position++;
+            return new Token(TokenType.LESS_THAN_OR_EQUAL_TO, "<=");
+        } else if (String.valueOf(currentChar) == ">=") {
+            position++;
+            return new Token(TokenType.GREATER_THAN_OR_EQUAL_TO, ">=");
         }
 
         throw new IllegalArgumentException("Invalid character: " + currentChar);
@@ -306,7 +312,7 @@ public class Lexer {
 //====================================================================================================================
 //TODO: Provide rules for special characters like  ',' OR '_' OR '^' etc.
     public static void main(String[] args) {
-        String input = "print fl"; // 3 + 42 - 17 / 3 * 4
+        String input = "print Hello"; // 3 + 42 - 17 / 3 * 4
         Lexer lexer = new Lexer(input);
         List<Token> tokens = lexer.tokenize();
 

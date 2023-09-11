@@ -1,8 +1,16 @@
+/* 
+ * 
+ * @6546545
+ * 
+ * This Parser class parses through Tokens produced by the Lexer class to evaluate arithmetic expressions.
+ *          -Takes in Lexer object
+ *    
+ * 
+ * 
+ * 
+ * 
+ */
 package src.com.mypackage;
-
-
-
-
 import src.Token;
 
 
