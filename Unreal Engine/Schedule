@@ -1,0 +1,68 @@
+Creating a schedule for developing an open-world video game like "Chronicles of Cyroth" is a complex task that involves multiple stages of development, including concept, design, production, testing, and polishing. Here's a general outline of how you could structure the project over a span of two years:
+
+**Year 1: Pre-production and Design**
+
+**Month 1-2: Concept and Planning**
+- Develop the core concept, setting, and main character.
+- Define the game's mechanics, features, and gameplay pillars.
+- Create a high-level design document outlining the game's story, mechanics, and world structure.
+- Set project milestones and goals.
+
+**Month 3-4: World Design and Storyboarding**
+- Design the world map and regions, considering environmental diversity and points of interest.
+- Create a detailed storyboard for the main story and major questlines.
+- Plan out the progression of the narrative, including Act divisions and key events.
+
+**Month 5-6: Character and Faction Design**
+- Design the main character, supporting characters, and faction leaders.
+- Develop character backstories, motivations, and relationships.
+- Outline the factions' goals, strengths, and weaknesses.
+
+**Month 7-8: Gameplay Mechanics and Systems**
+- Finalize gameplay mechanics, including combat, movement, and interaction.
+- Develop core systems such as inventory, upgrades, and character progression.
+- Create a prototype for gameplay mechanics to test their feasibility.
+
+**Year 2: Production, Testing, and Polishing**
+
+**Month 9-10: Environment Art and Level Design**
+- Begin creating environmental assets and terrain for different regions.
+- Design individual areas, landmarks, and points of interest within the world.
+- Develop a pipeline for creating and implementing assets into the game engine.
+
+**Month 11-12: Quest and Mission Design**
+- Design and script the main story quests and side quests.
+- Balance quest difficulty, rewards, and pacing.
+- Implement quest structures and triggers in the game engine.
+
+**Month 13-14: Character Modeling and Animation**
+- Create 3D models for main characters, NPCs, and enemies.
+- Develop animations for movement, combat, and interactions.
+- Integrate characters and animations into the game engine.
+
+**Month 15-16: Gameplay Implementation**
+- Implement gameplay mechanics, combat systems, and AI behaviors.
+- Test and iterate on gameplay mechanics based on user feedback.
+- Develop a playable vertical slice of the game for internal testing.
+
+**Month 17-18: Testing and Iteration**
+- Conduct playtesting sessions to gather feedback on gameplay, pacing, and bugs.
+- Iterate on mechanics, level design, and user interface based on playtest results.
+- Optimize performance and fix bugs identified during testing.
+
+**Month 19-20: Polishing and Finalization**
+- Focus on refining visuals, audio, and user experience.
+- Implement sound effects, music, and voice acting.
+- Polish quests, dialogues, and character interactions for a seamless experience.
+
+**Month 21-22: Quality Assurance and Launch Preparation**
+- Conduct extensive QA testing to identify and fix any remaining bugs.
+- Optimize the game for various platforms and hardware configurations.
+- Create marketing materials and promotional content for the game's launch.
+
+**Month 23: Launch and Post-Release Support**
+- Release the game on chosen platforms.
+- Monitor player feedback and address any post-launch issues promptly.
+- Plan and develop post-release content, updates, and expansions based on player feedback.
+
+Remember that the timeline and tasks may vary based on the size of your development team, available resources, and the complexity of the game. It's essential to regularly review and adjust the schedule as needed to ensure a successful and well-polished game release.
