@@ -1,4 +1,5 @@
-
+import graphics.*;
+import graphics.window.Window;
 
 /**
  * Entry Point
