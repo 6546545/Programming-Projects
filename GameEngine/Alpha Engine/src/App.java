@@ -7,7 +7,7 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
-import graphics.window.Window;
+import 
 
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
@@ -80,8 +80,8 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        new App().run();
-        //Window window = new Window();
-        //window.CreateWindow();
+        //new App().run();
+        Window window = new Window();
+        window.CreateWindow();
     }
 }

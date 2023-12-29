@@ -1,4 +1,3 @@
-package graphics.window;
 
 import java.awt.*;
 import javax.swing.*;
