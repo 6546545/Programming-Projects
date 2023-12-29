@@ -1,3 +1,4 @@
+import 'package:dating_app/themes/light_mode.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/IntroPage.dart';
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: IntroPage(),
+      theme: light,
     );
   }
 }
