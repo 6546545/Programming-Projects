@@ -1,12 +1,5 @@
 {
-	"folders": [
-		{
-			"path": "../.."
-		},
-		{
-			"path": "../../../../lwjgl-release-3.3.3-custom-5"
-		}
-	],
+	"folders": [],
 	"settings": {
 		"java.project.sourcePaths": [
 			""
