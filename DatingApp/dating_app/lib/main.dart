@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/welcomePage.dart';
 import 'package:dating_app/themes/light_mode.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      home: const IntroPage(),
       theme: light,
+      routes: {
+        '/introPage':(context) => const IntroPage(),
+        '/welcomePage':(context) => const WelcomePage(),
+        
+
+      },
     );
   }
 }
