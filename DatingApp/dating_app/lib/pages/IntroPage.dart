@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dating_app/components/button.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
@@ -39,11 +40,25 @@ class IntroPage extends StatelessWidget {
               color: Theme.of(context).colorScheme.inversePrimary
             ),
           ),
-          const SizedBox(height: 140),
+          const SizedBox(height: 30),
 
 
           //BUTTON
+          Button(
+            onTap: () {}, 
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Let's Get Started",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold
+                ),
+                ),
+            )
 
+            ),
 
 
 
