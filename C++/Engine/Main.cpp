@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <adxintrin.h>
+#include
 
 using namespace std;
 
