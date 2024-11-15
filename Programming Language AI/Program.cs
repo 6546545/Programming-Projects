@@ -1,1 +1,6 @@
-.
+using ProgrammingLanguage 
+
+namespace ProgrammingLanguageAI
+{
+    
+}
