@@ -1,6 +1,0 @@
-using ProgrammingLanguage 
-
-namespace ProgrammingLanguageAI
-{
-    
-}
