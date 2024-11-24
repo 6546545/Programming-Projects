@@ -1,0 +1,21 @@
+#Ignore Common Operating System Files
+.DS_Store
+
+#Ignore Build Artifacts
+build/
+dist/
+
+#Ignore Logs
+*.log
+*.tmp
+
+
+log/
+bin/
+obj/
+_site/
+.optemp/
+_themes*/
+_repo.*/
+.vs/
+.vscode/
