@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CustomProgrammingLanguage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fe532787baeaf7263d8029e7b4d1dc822fcfbcbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5282144670e2763f247725cbcb36b9d0ad638d74")]
 [assembly: System.Reflection.AssemblyProductAttribute("CustomProgrammingLanguage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CustomProgrammingLanguage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

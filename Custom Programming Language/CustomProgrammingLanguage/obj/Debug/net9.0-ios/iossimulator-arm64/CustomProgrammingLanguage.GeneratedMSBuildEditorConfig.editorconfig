@@ -30,12 +30,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = CustomProgrammingLanguage.
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[/Users/andrewgould/Desktop/Programming Projects/Custom Programming Language/CustomProgrammingLanguage/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = CustomProgrammingLanguage.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
 [/Users/andrewgould/Desktop/Programming Projects/Custom Programming Language/CustomProgrammingLanguage/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CustomProgrammingLanguage.Resources.Styles.Colors.xaml
