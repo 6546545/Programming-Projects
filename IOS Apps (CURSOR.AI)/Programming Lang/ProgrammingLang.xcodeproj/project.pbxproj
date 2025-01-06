@@ -1,0 +1,140 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 56;
+    objects = {
+
+/* Begin PBXBuildFile section */
+        // App
+        C10610C12D20A58400D69B53 /* ProgrammingLangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610C02D20A58400D69B53 /* ProgrammingLangApp.swift */; };
+        
+        // Views
+        C10610C32D20A58400D69B53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610C22D20A58400D69B53 /* ContentView.swift */; };
+        C10610F12D20A5B500D69B53 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610F02D20A5B500D69B53 /* MainView.swift */; };
+        C10610F32D20A5C500D69B53 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610F22D20A5C500D69B53 /* DocumentationView.swift */; };
+        C10610F52D20A5D500D69B53 /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610F42D20A5D500D69B53 /* CodeEditorView.swift */; };
+        
+        // ViewModels
+        C10610F72D20A5E500D69B53 /* LanguageGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610F62D20A5E500D69B53 /* LanguageGeneratorViewModel.swift */; };
+        
+        // Models - Compiler
+        C10610F92D20A5F500D69B53 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610F82D20A5F500D69B53 /* Token.swift */; };
+        C10610FB2D20A60500D69B53 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610FA2D20A60500D69B53 /* Lexer.swift */; };
+        C10610FD2D20A61500D69B53 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610FC2D20A61500D69B53 /* Parser.swift */; };
+        C10610FF2D20A62500D69B53 /* AST.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10610FE2D20A62500D69B53 /* AST.swift */; };
+        C10611012D20A63500D69B53 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10611002D20A63500D69B53 /* Compiler.swift */; };
+        C10611032D20A64500D69B53 /* CodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10611022D20A64500D69B53 /* CodeGenerator.swift */; };
+        
+        // Models - Documentation
+        C10611052D20A65500D69B53 /* LanguageDocumentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10611042D20A65500D69B53 /* LanguageDocumentation.swift */; };
+        
+        // Models - Error
+        C10611072D20A66500D69B53 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10611062D20A66500D69B53 /* AppError.swift */; };
+        C10611092D20A67500D69B53 /* CompilerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10611082D20A67500D69B53 /* CompilerErrors.swift */; };
+        
+        // Models - Runtime
+        C106110B2D20A68500D69B53 /* RuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C106110A2D20A68500D69B53 /* RuntimeEnvironment.swift */; };
+        
+        // Tests
+        C106110D2D20A69500D69B53 /* CompilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C106110C2D20A69500D69B53 /* CompilerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        // App
+        C10610BE2D20A58400D69B53 /* ProgrammingLang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammingLang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        C10610C02D20A58400D69B53 /* ProgrammingLangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLangApp.swift; sourceTree = "<group>"; };
+        
+        // Views
+        C10610C22D20A58400D69B53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        C10610F02D20A5B500D69B53 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+        C10610F22D20A5C500D69B53 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
+        C10610F42D20A5D500D69B53 /* CodeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorView.swift; sourceTree = "<group>"; };
+        
+        // ViewModels
+        C10610F62D20A5E500D69B53 /* LanguageGeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGeneratorViewModel.swift; sourceTree = "<group>"; };
+        
+        // Models - Compiler
+        C10610F82D20A5F500D69B53 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+        C10610FA2D20A60500D69B53 /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
+        C10610FC2D20A61500D69B53 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+        C10610FE2D20A62500D69B53 /* AST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AST.swift; sourceTree = "<group>"; };
+        C10611002D20A63500D69B53 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+        C10611022D20A64500D69B53 /* CodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerator.swift; sourceTree = "<group>"; };
+        
+        // Models - Documentation
+        C10611042D20A65500D69B53 /* LanguageDocumentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDocumentation.swift; sourceTree = "<group>"; };
+        
+        // Models - Error
+        C10611062D20A66500D69B53 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+        C10611082D20A67500D69B53 /* CompilerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerErrors.swift; sourceTree = "<group>"; };
+        
+        // Models - Runtime
+        C106110A2D20A68500D69B53 /* RuntimeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeEnvironment.swift; sourceTree = "<group>"; };
+        
+        // Tests
+        C106110C2D20A69500D69B53 /* CompilerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+        C10610C02D20A58400D69B53 /* ProgrammingLang */ = {
+            isa = PBXGroup;
+            children = (
+                C10610C02D20A58400D69B53 /* ProgrammingLangApp.swift */,
+                C10610EB2D20A59500D69B53 /* Views */,
+                C10610EC2D20A59A00D69B53 /* ViewModels */,
+                C10610ED2D20A59F00D69B53 /* Models */,
+            );
+            path = ProgrammingLang;
+            sourceTree = "<group>";
+        };
+        
+        C10610EB2D20A59500D69B53 /* Views */ = {
+            isa = PBXGroup;
+            children = (
+                C10610C22D20A58400D69B53 /* ContentView.swift */,
+                C10610F02D20A5B500D69B53 /* MainView.swift */,
+                C10610F22D20A5C500D69B53 /* DocumentationView.swift */,
+                C10610F42D20A5D500D69B53 /* CodeEditorView.swift */,
+            );
+            path = Views;
+            sourceTree = "<group>";
+        };
+        
+        C10610EC2D20A59A00D69B53 /* ViewModels */ = {
+            isa = PBXGroup;
+            children = (
+                C10610F62D20A5E500D69B53 /* LanguageGeneratorViewModel.swift */,
+            );
+            path = ViewModels;
+            sourceTree = "<group>";
+        };
+        
+        C10610ED2D20A59F00D69B53 /* Models */ = {
+            isa = PBXGroup;
+            children = (
+                C10610EE2D20A5A400D69B53 /* Compiler */,
+                C10610EF2D20A5A900D69B53 /* Documentation */,
+                C10610F02D20A5AE00D69B53 /* Error */,
+                C10610F12D20A5B300D69B53 /* Runtime */,
+            );
+            path = Models;
+            sourceTree = "<group>";
+        };
+        
+        // Add other groups...
+/* End PBXGroup section */
+
+/* Begin PBXSourcesBuildPhase section */
+        C10610BA2D20A58400D69B53 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                // Add all source files...
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXSourcesBuildPhase section */
+    };
+}; 

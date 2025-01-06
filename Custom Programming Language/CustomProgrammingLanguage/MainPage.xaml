@@ -1,6 +1,6 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LanguageCreatorAI.UI.MainPage"
+             x:Class="LanguageCreatorAI.MainPage"
              BackgroundColor="White">
     <VerticalStackLayout Padding="20" Spacing="10">
         <Label Text="Spoken Language" FontSize="18"/>

@@ -1,4 +1,5 @@
-﻿namespace CustomProgrammingLanguage;
+﻿using CustomProgrammingLanguage;
+namespace CustomProgrammingLanguage;
 
 public partial class App : Application
 {

@@ -2,7 +2,7 @@
 using LanguageCreatorAI.Processors;
 using LanguageCreatorAI.Grammar;
 
-namespace LanguageCreatorAI.UI
+namespace LanguageCreatorAI
 {
     public partial class MainPage : ContentPage
     {
