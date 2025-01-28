@@ -9,26 +9,51 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _cameraService = CameraService();
+    late CameraService _cameraService;
+    bool _isCameraReady = false;
+
+
 
   @override
   void initState() {
     super.initState();
     _cameraService.initialize();
+    _initializeCamera();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Astro Capture')),
-      body: Column(
-        children: [
-          Expanded(child: _cameraService.getPreview()),
-          _buildCaptureButton(),
-        ],
-      ),
-    );
+    Future<void> _initializeCamera() async {
+    try {
+      await _cameraService.initialize();
+      if (!mounted) return;
+      setState(() => _isCameraReady = true);
+    } catch (e) {
+      if (mounted) {
+        showDialog(
+          context: context,
+          builder: (_) => AlertDialog(
+            title: const Text('Camera Error'),
+            content: Text('Failed to initialize camera: $e'),
+          ),
+        );
+      }
+    }
   }
+
+ @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(title: const Text('Astro Capture')),
+    body: _isCameraReady 
+        ? _cameraService.getPreview()
+        : const Center(child: CircularProgressIndicator()),
+    floatingActionButton: _isCameraReady 
+        ? FloatingActionButton(
+            onPressed: _cameraService.capture,
+            child: const Icon(Icons.camera),
+          )
+        : null,
+  );
+}
 
   Widget _buildCaptureButton() {
     return FloatingActionButton(
